@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+	<title>책 등 사이즈 계산하기 </title>
+		<style type="text/css">
+		@font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+		@font-face { font-family: 'S-CoreDream-4Regular'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
+		@font-face { font-family: 'S-CoreDream-6Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff'); font-weight: normal; font-style: normal; }
+			.wh{z-index: 0px; display: block; background: url('a.gif'); background-size: 790px, auto; }
+			.wrap {display: block; width: 550px; margin: auto; margin-top: 60px; padding-top:40px; background-color: white; opacity:0.965;  padding-bottom: 40px;border-radius: 40px; }
+			h1{  width: 550px; font-family: 'S-CoreDream-8Heavy'; font-size:33px;  line-height: 2.0; display: block; z-index:999 ;  text-align: center; color:#766250; }
+			h2{ width: 550px; font-family: 'S-CoreDream-4Regular'; font-size:11px;  line-height: 1.9; display: block; z-index:999 ;  text-align: center; color:#707070;  }
+			h4{ width: 550px; font-family: 'S-CoreDream-6Bold'; font-size:16.5px;  line-height: 1.9; display: block; z-index:999 ;  text-align: center; color:#535353;  }
+			#monitor { width: 550px; font-family: 'S-CoreDream-6Bold'; font-size:16.5px;  line-height: 1.9; display: block; z-index:999 ;  text-align: center; color:#535353;  }
+			.jin{display: block; width: 340px; margin: auto; text-align: center; background-color: #d1c0a5; padding-top: 20px; padding-bottom: 20px; border-radius:20px;	
+				box-shadow: 1px 1px 4px #e5e5e5 inset;}
+		h3{ width: 340px; font-family: 'S-CoreDream-6Bold'; font-size:15px;  line-height: 1.9; display: block; z-index:999 ;  text-align: center; color:#535353;   }
+			h5 {width: 340px; font-family: 'S-CoreDream-6Bold'; font-size:15px;  line-height: 1.9; display: block; z-index:999 ;  text-align: center; color:#535353;   }
+			#mheight{background: #e5e5e5;	font-size:12px; padding:8px; border: 
+			box-shadow: 0px 0px 2px gray inset;
+			border-radius: 5px;}
+			#mweight{background: #e5e5e5;	font-size:12px; padding:8px; border: 
+			box-shadow: 0px 0px 2px gray inset;
+			border-radius: 5px;}
+			footer{width: 550px; padding-top: 40px; text-align: center; margin:auto;}
+		footer p {font-family: 'S-CoreDream-4Regular'; font-size:10px; text-align: center; line-height: 1.8; color:#595959;}
+		
+
+		</style>
+	</head>
+<body>
+	<div class="wh">
+	<div class="wrap">
+	<h1>책등의 사이즈를 알아봅시다.</h1>
+	<h2>책에서 가장 중요한 부분 중 하나는 독자에게 책의 느낌을 알려주는 표지입니다.<br> 그런 표지를 완성하기 위해서는 책등을 사이즈를 알아야 하는데요! <br>책을 제작할 때 책등의 사이즈를 정확하게 알아야 제대로 된 결과물을 받아볼 수 있습니다!</h2>
+
+<h4> 그럼 이제 당신의 열심히 준비한 작업물인 책을 완성해볼까요? </h4>
+<br>
+<div class="jin">
+	<h3> 용지 <input type="text" id="mheight" placeholder="용지 무게를 g단위로 입력하세요."></h3>
+
+	<h5> 페이지 <input type="text" id="mweight" placeholder="페이지 수를 입력하세요."></h5>
+</div>
+	
+	<br>
+	<div id="monitor"><h4> 당신의 책의 책등 사이즈는 000(mm)입니다.</h4></div>
+	<script>
+		mweight.oninput=function(){
+			
+			var sweight = mheight.value*mweight.value*0.6;
+			monitor.innerHTML="책등 사이즈는"+ "&nbsp;" + Math.round(sweight)*0.001 +"(mm)입니다.";
+
+		}
+		mheight.oninput=function(){
+			//height이라는 이름의 range를 움직이면, 요기를 실행해
+			//height의 value값을 myh에 표시해,
+		
+			var sweight = mheight.value*mweight.value*0.6;
+			monitor.innerHTML="책등 사이즈는"+ "&nbsp;" + Math.round(sweight)*0.001 +"(mm)입니다.";
+
+	
+		}
+		//1. okbut를 누르면, 
+		//2. height값을 받아서 sweight계산, 
+		//3. monitor에 표시 
+		//math round는 반올림
+	</script>
+	</div>
+</div>
+	<footer>
+		<p>디지털 퍼블리싱2 / 2019.09.17/ IMnabang</p>
+	</footer>
+</body>
+</html>
